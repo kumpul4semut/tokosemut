@@ -1,0 +1,130 @@
+body{
+  background:#27293d;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*home */
+.card-item{
+  background: linear-gradient(0deg, #0098f0 0%, #00f2c3 100%);
+  color: rgba(255, 255, 255, 0.8);
+}
+.card-item:hover{
+  background: linear-gradient(to right, #642b73, #c6426e);
+  opacity: 0.2;
+}
+
+.fa-external-link-alt{
+  color: #27293d;
+}
+
+.fa-user{
+  color: #27293d;
+}
+
+.hover{
+  opacity: 0;
+  position: absolute;
+  top: 50%;  
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+.hover:hover{
+  opacity: 1;
+}
+
+.card-primary{
+  background: #27293d;
+  border: none;
+}
+
+.btn-primary-gradient{
+  background:linear-gradient(to right, #642b73, #c6426e);
+  color: rgba(255, 255, 255, 0.8);
+}
+/*end home*/
+
+/*Login*/
+.login-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.login-form h1{
+  margin-bottom: 40px;
+  color: #f1f1f1;
+}
+
+.group-form{
+  position: relative;
+  margin: 30px 0;
+  border-bottom: 2px solid #adadad;
+}
+
+.group-form input{
+  font-size: 15px;
+  color: #f1f1f1;
+  border: none;
+  width: 100%;
+  outline: none;
+  background: none;
+  padding: 0 5px;
+  height: 30px;
+}
+
+.group-form span::before{
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 0px;
+  color: #adadad;
+  z-index: -1;
+  transition: .5s;
+}
+.group-form span::after{
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(120deg, #3498db, #8e44ad);
+  transition: .5s;
+}
+
+.focus + span::before{
+  top: -15px;
+}
+
+.focus + span::after{
+  width: 100%
+}
+
+.logbtn{
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none;
+  background: linear-gradient(120deg, #3498db, #8e44ad);
+  background-size: 200%;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.logbtn:hover{
+  background-position: right;
+}
+
+.bottom-form{
+  margin-top: 40px;
+  text-align: center;
+  font-size: 13px;
+}
+
+/*end login*/
+

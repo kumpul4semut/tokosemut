@@ -1,0 +1,148 @@
+html, body {
+     height: 100%;
+}
+ html {
+     font: 400 18px/1.5 Lato;
+}
+ body {
+     background: #eef0f4;
+     display: flex;
+}
+ svg {
+     display: inline-block;
+}
+ .wrapper {
+     display: flex;
+     flex-direction: column;
+     margin: auto;
+     width: 300px;
+     height: 590px;
+     overflow: hidden;
+     position: relative;
+     background-color: white;
+     border-radius: 34px;
+     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+ .logo {
+     position: absolute;
+     top: 55px;
+     left: 1.6rem;
+     color: #1933ff;
+}
+ .header {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     flex-grow: 0;
+}
+ .waves {
+     width: 150%;
+     margin-top: 65px;
+}
+ .wave {
+     color: #1933ff;
+     position: relative;
+     width: 100%;
+}
+ .wave svg {
+     fill: currentColor;
+}
+ .wave::before {
+     content: '';
+     position: absolute;
+     top: 98%;
+     height: 100%;
+     left: 0;
+     right: 0;
+     background-color: currentColor;
+}
+ .wave-black {
+     color: #000;
+}
+ .wave-cream {
+     color: #ffd4aa;
+}
+ .wave-1 {
+     transform: rotate(-10deg);
+}
+ .wave-2 {
+     margin-top: -100px;
+     transform: rotate(-29deg);
+}
+ .wave-3 {
+     margin-top: -65px;
+     transform: rotate(-14deg);
+}
+ .wave-4 {
+     margin-top: -40px;
+     transform: rotate(-20deg);
+}
+ .main {
+     position: relative;
+     padding: 1.6rem;
+     flex-grow: 1;
+     background-color: white;
+     border-top-left-radius: 34px;
+     border-top-right-radius: 34px;
+     margin-top: 30px;
+}
+ label {
+     display: flex;
+     align-items: center;
+     margin: 0.6rem 0;
+     color: #b8c3d0;
+     font-size: 15px;
+     border-bottom: 1px solid #edf2f7;
+}
+ label i {
+     flex-shrink: 0;
+}
+ label input {
+     padding: 0.8rem;
+     flex-grow: 1;
+     color: #4b5c71;
+}
+
+label input {
+        padding: .8rem;
+        flex-grow: 1;
+        color: darken(#b8c3d0, 40%);
+        border: none;
+}
+ 
+.fa{
+    margin-right: 5px;
+}
+.button {
+     background-color: #1933ff;
+     color: white;
+     display: block;
+     width: 100%;
+     padding: 0 2rem;
+     min-height: 50px;
+     border-radius: 8px;
+     border: 2px solid #1933ff;
+     font-size: 16px;
+     font-weight: 600;
+     cursor: pointer;
+}
+
+.button:hover{
+    background-color: transparent;
+    color:#1933ff;
+}
+
+.button-outlined{
+     background-color: transparent;
+     color: #1933ff;
+}
+
+
+}
+ .link {
+     font-size: 13px;
+}
+ .link:hover {
+     text-decoration: underline;
+}
+ 
