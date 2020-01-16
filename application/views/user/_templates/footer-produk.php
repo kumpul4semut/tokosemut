@@ -128,10 +128,13 @@
 
       //function get log trx
       function getInvoice() {
+        var idGroup = $('.btn-group .active').attr('data-id-group')
+
         $.ajax({
           type  :'GET',
           url   :'<?php echo base_url('user/produk/getStatusTrx'); ?>',
           dataType :'json',
+          data:{idGroup:idGroup},
           beforesend: function() {
             $('#show-log-invoice').html("loading..")
           },

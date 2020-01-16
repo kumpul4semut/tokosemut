@@ -541,8 +541,9 @@ class Produk extends User_Controller
 	public function getStatusTrx() {
 		$this->_getStatusTrx();
 		// model get trx_produk by user
+		$idGroup = $this->input->get('idGroup');
 		$id_user = $this->email_login->id;
-		$this->result= $this->Tbl_trx_produk->getByUser($id_user)->result();
+		$this->result= $this->Tbl_trx_produk->getByUser($id_user, $idGroup)->result();
 		foreach ($this->result as $key => $value) {
 			if ($value->price == 0) {
 				$this->result[$key]->price = $value->trx_price;

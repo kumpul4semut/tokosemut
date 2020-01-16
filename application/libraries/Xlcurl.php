@@ -514,9 +514,12 @@ class Xlcurl
 				}else{
 					$str = $a['SOAP-ENV:Body'][0]['ns0:opReadContactRs'][0]['ns0:contact'][0]['ns0:contactMessage'][0];
 						preg_match_all('!\d+!', $str, $matches);
+
+					$str2 = $a['SOAP-ENV:Body'][0]['ns0:opReadContactRs'][0]['ns0:contact'][0];
+					// print_r($str2);die;
 					$arr = [
 						'status'=>'true',
-						'date'	=>	date('Y-m-d', strtotime($unidata['ns0:timestamp'][0])),
+						'date'	=>	date('Y-m-d', strtotime($str2['ns0:contactHeader'][0]['ns0:timestamp'][0])),
 						'from'	=>	$matches[0][1],
 						'amount'=> $matches[0][2]
 
@@ -525,13 +528,21 @@ class Xlcurl
 				array_push($result, $arr);
 			}
 		}
-		$finalresult=[];
+		$prefinalresult=[];
 		foreach ($result as $r) {
 			if ($r['status'] == 'false') {
 				continue;
 			}
-			array_push($finalresult, $r);
+			array_push($prefinalresult, $r);
 		}
+		$finalresult=[];
+		$today = date('Y-m-d', time());
+		foreach ($prefinalresult as $p) {
+			if ($p['date'] == $today) {
+				array_push($finalresult, $p);
+			}
+		}
+
 		return $finalresult;
 
 	}

@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tbl_trx_produk extends CI_Model {
 
-	public function getByUser($id_user) {
+	public function getByUser($id_user, $idGroup) {
 		$this->db->select('
 			trx_produk.id,
 			trx_produk.sn,
@@ -14,10 +14,12 @@ class Tbl_trx_produk extends CI_Model {
 			trx_produk.customer_name,
 			produk.name,
 			produk.price,
+			produk.group_produk_id,
 			group_produk.group_name');
 		$this->db->from('trx_produk');
-		$this->db->join('produk', 'trx_produk.produk_id = produk.id');
-		$this->db->join('group_produk', 'produk.group_produk_id = group_produk.id');
+		$this->db->where('produk.group_produk_id', $idGroup);
+		$this->db->join('produk', 'trx_produk.produk_id = produk.id', 'left');
+		$this->db->join('group_produk', 'produk.group_produk_id = group_produk.id', 'left');
 		$this->db->where('trx_produk.user_id', $id_user);
 		$this->db->order_by('trx_produk.id', 'desc');
 		return $this->db->get();
