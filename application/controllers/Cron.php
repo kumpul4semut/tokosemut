@@ -243,10 +243,7 @@ class Cron extends CI_Controller {
 
 			}elseif($inv->name == 'XL'){
 
-				$cek = $this->_accXl($inv->nominal, $inv->from_sended, $inv->id);
-				if (!isset($cek)) {
-					$this->_accOXl($inv->nominal, $inv->from_sended, $inv->id);
-				}
+				$cek = $this->_accOXl($inv->nominal, $inv->from_sended, $inv->id);
 
 			}
 		}
